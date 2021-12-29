@@ -1,0 +1,244 @@
+body{
+    margin: 0;
+    margin-top: 80px;
+    overflow-x: hidden;
+}
+h2,p,h3{
+    margin: 0;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #424242;
+}
+.title{
+    width: 100vw;
+    height: 80px;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+.title-logo img{
+    height: 50px;
+}
+.title-nav{
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+.title-nav ul{
+    display: flex;
+    height: 100%;
+    /* justify-content: center; */
+    align-items: center;
+}
+.title-nav ul li{
+    height: 100%;
+    padding: 0 1.2vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.title-nav ul li::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    background-color: #000;
+    left: 0;
+}
+.title-nav ul li:hover::after{
+    transition:  .3s linear;
+    width: 100%;
+}
+.title-nav button{
+    outline: none;
+    border: 1px solid #eee;
+    display: flex;
+    height: 70%;
+    min-width: 40px;
+    align-self: center;
+    background-image: url('img/btn.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width:768px){
+    body{
+        margin-top: 50px;
+    }
+    .title{
+        height: 50px;
+    }
+    .title-logo img{
+        height: 30px;
+    }
+    .title-nav ul li{
+        font-size: 14px;
+        line-height: 50px;
+        height: initial;
+    }
+
+}
+@media screen and (max-width:550px){
+    .title-nav button{
+        display: block;
+    } 
+    .title-nav ul li{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #eee;
+    }
+    .title-nav ul li:not(:last-of-type){
+        border-bottom: 1px solid #ddd;
+    }
+    .title-nav ul{
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        top: 49px;
+        height: 0;
+        overflow: hidden;
+        transition: height .3s linear;
+    }
+    .title-nav ul.show{
+        height: 250px;
+    }
+    
+}
+.banner{
+    width: 100vw;
+    height: 36vw;
+    position: relative;
+    overflow: hidden;
+}
+.banner ul{
+    display: flex;
+    width: 300vw;
+    /* top: 0; */
+    position: absolute;
+}
+.banner ul.auto{
+    transition: all 2s ease-in-out;
+}
+.banner ul li{
+    width: 100%;
+    height: 100%;
+}
+.banner ul li img{
+    width: 100%;
+    height: 100%;
+}
+
+.menu{
+    margin: 50px 0;
+}
+.menu .menu-title{
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #ddd;
+    font-weight: bold;
+}
+.menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.menu-list div{
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    padding: 20px 10px;
+    text-align: center;
+    width: 80%;
+}
+.menu-list div img{
+    transition: .3s linear;
+}
+.menu-list div img:hover{
+    transform: scale(1.1);
+}
+.menu-list div p{
+    margin-top: 6px;
+}
+@media screen and (min-width:768px){
+    .menu-list div{
+        width: 46%;
+    }
+    .menu-list{
+        width: 720px;
+    }
+}
+
+@media screen and (min-width:992px){
+    .menu-list div{
+        width: 30%;
+    }
+    .menu-list{
+        width: 960px;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .menu-list div{
+        width: 22%;
+    }
+    .menu-list{
+        width: 1140px;
+    }
+}
+
+
+.menu-list div img{
+    width: 90%;
+    opacity: .9;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.footer{
+    height: 500px;
+    background-image: url('img/bottom.jpg');
+    background-size: 100%;
+    position: relative;
+}
+.footer::after{
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+}
